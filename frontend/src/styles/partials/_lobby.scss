@@ -1,0 +1,414 @@
+.lobbyContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 250px);
+  min-width: 500px;
+  height: calc(100% - 250px);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $blue_3;
+}
+
+.leftSidebarContainer,
+.mainContainer {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+  overflow: auto;
+}
+
+.leftSidebarContainer {
+  width: 300px;
+  height: 100%;
+}
+
+.mainContainer {
+  width: calc(100% - 306px);
+  height: calc(100% - 6px);
+  margin: 3px 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: $blue_1;
+}
+
+.mainContent {
+  height: 100%;
+  color: $blue_3;
+}
+
+.userListContent {
+  position: relative;
+  margin-top: 50px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Users';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.userListItem {
+  height: 20px;
+}
+
+.userListItemStatus,
+.userListItemUsername,
+.userListItemId,
+.creatorControl {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30px
+}
+
+.userListItemStatus {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid $blue-1;
+  background-color: $blue-3;
+
+  &--online {
+    background-color: $blue-1;
+  }
+}
+
+.publicRoomListContent {
+  position: relative;
+  min-height: 30px;
+  margin-top: 70px;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Public Rooms';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.publicRoomListCreateContent {
+  position: relative;
+  min-height: 30px;
+  margin-top: 70px;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Create Public Room';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.publicRoomListItem {
+  height: 30px;
+}
+
+.publicRoomListRoomName,
+.publicRoomListUserCount,
+.publicRoomListUserJoin {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.publicRoomListUserJoin {
+  @extend %basicButton;
+  padding: 3px 5px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.privateRoomListContent {
+  position: relative;
+  min-height: 30px;
+  margin-top: 70px;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Private Rooms';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.privateRoomListItem {
+  height: 30px;
+}
+
+.privateRoomListRoomName,
+.privateRoomListUserCount,
+.privateRoomListUserJoin {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.privateRoomListUserJoin {
+  @extend %basicButton;
+  padding: 3px 5px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.publicRoomListCreateRoomNameInput,
+.privateRoomListJoinPasswordInput,
+.privateRoomListCreateRoomNameInput,
+.privateRoomListCreateRoomPasswordInput {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  padding: 15px;
+  border: 3px solid $blue_3;
+  border-radius: 9px;
+  vertical-align: bottom;
+  background-color: $blue_1;
+  color: $blue_3;
+}
+
+.publicRoomListCreateRoomNameInput {
+  margin-top: 30px;
+}
+
+.privateRoomListJoinContent {
+  position: relative;
+  min-height: 30px;
+  margin-top: 70px;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Password for Join Private Room';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.privateRoomListCreateContent {
+  position: relative;
+  min-height: 30px;
+  margin-top: 70px;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &:before {
+    content: 'Create Private Room';
+    position: absolute;
+    top: -20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.publicRoomListCreateSubmit,
+.privateRoomListCreateSubmit {
+  @extend %basicButton;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.privateMessages,
+.adminMessages {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  right: -300px;
+  transition: 1s;
+  color: $blue_1;
+  background-color: $blue_3;
+
+  &--on {
+    right: 0;
+  }
+}
+
+.adminMessages {
+  top: 400px;
+}
+
+.privateMessagesButton {
+  position: absolute;
+  bottom: 20px;
+  left: -57px;
+  width: 80px;
+  height: 40px;
+  transform: rotate(90deg);
+  padding-top: 11px;
+  border-bottom-left-radius: 9px;
+  text-align: center;
+  background-color: $blue_3;
+
+  &:hover {
+    border: 3px solid $blue_3;
+    background-color: $blue_1;
+    color: $blue_3;
+  }
+}
+
+.adminMessagesButton {
+  position: absolute;
+  top: 20px;
+  left: -57px;
+  width: 80px;
+  height: 40px;
+  transform: rotate(90deg);
+  padding-top: 11px;
+  border-bottom-right-radius: 9px;
+  text-align: center;
+  background-color: $blue_3;
+
+  &:hover {
+    border: 3px solid $blue_3;
+    background-color: $blue_1;
+    color: $blue_3;
+  }
+}
+
+.adminMessagesContainer,
+.privateMessagesContainer {
+  height: 100%;
+}
+
+.privateMessagesInputContent {
+    position: absolute;
+    bottom: 0;
+}
+
+.adminMessagesContent {
+  position: absolute;
+  top: 0;
+}
+
+.adminMessageItem {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.privateMessageUserIdInput,
+.privateMessageContentInput {
+  height: 40px;
+  margin-top: 5px;
+  padding: 15px;
+  border: 3px solid $blue_3;
+  border-radius: 9px;
+  vertical-align: bottom;
+  background-color: $blue_1;
+  color: $blue_3;
+}
+
+.privateMessageUserIdInput {
+  width: 60px;
+  padding: 15px 10px;
+}
+
+.privateMessageContentInput {
+  width: calc(100% - 120px);
+}
+
+.privateMessageSubmit {
+  @extend %basicButton;
+  width: 47px;
+  padding: 8px 2px;
+  font-size: 16px;
+  border-radius: 9px;
+  font-weight: 400;
+}
+
+.userListItemKick,
+.userListItemban,
+.userListItemInvite {
+  @extend %basicButton;
+  width: 47px;
+  padding: 2px;
+  font-size: 12px;
+  border-radius: 9px;
+  font-weight: 400;
+}
+
+.chatLeaveRoom {
+  display: inline-block;
+  width: 20%;
+  height: 45px;
+}
+
+.chatLeaveRoomButton {
+  @extend %basicButton;
+  width: 20%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.chatMessageSearch {
+  display: inline-block;
+  width: calc(80% - 6px);
+}
+
+.chatMessageSearchInput {
+  width: 100%;
+  height: 40px;
+  padding: 15px;
+  border: 3px solid $blue_3;
+  border-radius: 9px;
+  vertical-align: bottom;
+  background-color: $blue_1;
+  color: $blue_3;
+}
+
+.chatMessages {
+  height: calc(100% - 120px);
+}
+
+.chatMessageItem {
+  height: 60px;
+}
+
+.chatMessageFromUser {
+  margin-bottom: 10px;
+}
+
+.chatMessageContent {
+  margin-bottom: 30px;
+}
+
+.chatMessageInputContainer {
+  height: 47px;
+}
+
+.chatMessageInput {
+  width: calc(100% - 100px);
+  height: 40px;
+  padding: 15px;
+  border: 3px solid $blue_3;
+  border-radius: 9px;
+  vertical-align: bottom;
+  background-color: $blue_1;
+  color: $blue_3;
+}
+
+.chatMessageInputSubmit {
+  @extend %basicButton;
+  width: 87px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  font-weight: 700;
+}
