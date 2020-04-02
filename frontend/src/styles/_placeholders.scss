@@ -1,0 +1,22 @@
+%basicButton {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid $blue_3;
+  border-radius: 12px;
+  font-size: 17px;
+  text-decoration:none;
+  color: $blue_1;
+  background-color: $blue_3;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background-color: $blue_1;
+    color: $blue_3;
+  }
+
+  &:active {
+    position:relative;
+    top:1px;
+  }
+}

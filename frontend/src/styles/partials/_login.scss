@@ -1,0 +1,102 @@
+.loginContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 700px;
+  min-width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  background-color: $blue_3;
+
+  &__signup {
+    &--good {
+      background-color: $green;
+
+      .loginHeader {
+        background-color: $green;
+      }
+      .loginFormInput {
+        border-color: $green;
+        color: $green;
+      }
+      .loginFormButton {
+        border-color: $green;
+        background-color: $green;
+        color: $blue_1;
+
+        &:hover {
+          border-color: $green;
+          background-color: $blue_1;
+          color: $green;
+        }
+      }
+    }
+
+    &--bad {
+      background-color: $red;
+
+      .loginHeader {
+        background-color: $red;
+      }
+      .loginFormInput {
+        border-color: $red;
+        color: $red;
+      }
+      .loginFormButton {
+        border-color: $red;
+        background-color: $red;
+
+        &:hover {
+          border-color: $red;
+          background-color: $blue_1;
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+.loginHeader {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  border-bottom: 3px solid $blue_1;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: $blue_3;
+  color: $blue_1;
+}
+
+.loginFormInput {
+  width: calc(100% - 50px);
+  height: 40px;
+  margin-top: 15px;
+  padding: 15px;
+  border: 3px solid $blue_3;
+  border-radius: 6px;
+  background-color: $blue_1;
+  color: $blue_3;
+}
+
+.loginFormButtonGroup {
+  text-align: center;
+}
+
+.loginFormButton {
+  @extend %basicButton;
+  width: 150px;
+  margin-top: 15px;
+}
+
+.loginMessage {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: calc(100% - 110px);
+  text-align: right;
+  font-size: 14px;
+}
