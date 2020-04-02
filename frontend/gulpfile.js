@@ -40,6 +40,6 @@ gulp.task('dev', gulp.series('devdeploy', () => {
 
 gulp.task('deploy', gulp.series('assets', () => {
   return gulp
-    .src(publicFiles, { base: './' })
+    .src(publicFiles, { base: './src' })
     .pipe(gulp.dest('./public'))
 }))
