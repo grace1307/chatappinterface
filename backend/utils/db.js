@@ -4,7 +4,7 @@ const env = require('../env')
 
 class DBManage {
   constructor () {
-    this.connection = new Sequelize(env.database.name, env.database.username, env.database.password, { host: env.database.host, port: env.database.port, dialect: 'mysql' })
+    this.connection = new Sequelize(env.database.name, env.database.username, env.database.password, { host: env.database.host, port: env.database.port, dialect: 'mysql', logging: env.environment === 'dev' })
 
     // Test database connection
     this.connection
